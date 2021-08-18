@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/ZGGSONG/zggsong.github.io@master/d6e1042cf3c63cf7bdc1140d384180e2.json"
+            api: "https://cdn.jsdelivr.net/gh/ZGGSONG/zggsong.github.io@master/c9755689d03515883623733b66832ca4.json"
         }
     </script>
     <script>
@@ -149,7 +149,7 @@
 <li>创建新的SSH公钥</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ~
-ssh-keygen -t rsa -C <span class="s2">&quot;youremail@domain.com&quot;</span>
+ssh-keygen -t rsa
 
 <span class="c1">#出现以下结果则说明创建成功</span>
 Generating public/private rsa key pair.
@@ -157,8 +157,7 @@ Enter file <span class="k">in</span> which to save the key <span class="o">(</sp
 Created directory <span class="s1">&#39;/root/.ssh&#39;</span>.
 Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>:  <span class="c1"># 根据提示，你需要输入密码和确认密码。可以不填，设置为空值，直接回车</span>
 Enter same passphrase again: 
-Your identification has been saved <span class="k">in</span> /root/.ssh/id_rsa.
-Your public key has been saved <span class="k">in</span> /root/.ssh/id_rsa.pub.
+Your identification has been saved <span class="k">in</span> /root/.ssh/id_rsa.  Your public key has been saved <span class="k">in</span> /root/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256:yFt14TcP0H+ixy9VKiILPPJ6DVevkKgrbxVFqk7mn5k xxxxxx@126.com
 The key<span class="err">&#39;</span>s randomart image is:
@@ -182,12 +181,7 @@ ls
 <span class="c1">#显示以下内容</span>
 id_rsa      id_rsa.pub
 </pre></div>
-<p>其中id_rsa.pub就是公钥</p><ul>
-<li>测试连接</li>
-</ul>
-<div class="highlight"><pre><span></span>ssh -T git@github.com
-</pre></div>
-<h2>ssh免密登陆</h2>
+<p>其中id_rsa.pub就是公钥</p><h2>ssh免密登陆</h2>
 
 <pre><code># 在客户端上配置config
 vim ~/.ssh/config
@@ -206,6 +200,8 @@ git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
 
 <span class="c1">#查看</span>
 git config --list
+</pre></div>
+<p>测试连接</p><div class="highlight"><pre><span></span>ssh -T git@github.com
 </pre></div>
 <h2>Git 常用命令</h2>
 <h3>仓库</h3>
